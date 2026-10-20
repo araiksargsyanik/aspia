@@ -486,18 +486,14 @@ void UserSession::onIpcNewConnection()
         return;
     }
 
-    if (session_id_ == kInvalidSessionId)
+        if (session_id_ == kInvalidSessionId)
     {
         SessionId ipc_session_id = ipc_channel->sessionId();
 
         LOG(INFO) << "User GUI started by user with session id" << ipc_session_id;
 
         if (ipc_session_id != activeConsoleSessionId())
-        {
-            LOG(WARNING) << "Launching GUI is only possible in console session";
-            ipc_channel->deleteLater();
-            return;
-        }
+            LOG(INFO) << "GUI session is not the active console session (RDP); allowing anyway";
 
         session_id_ = ipc_session_id;
     }
