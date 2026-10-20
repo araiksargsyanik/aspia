@@ -1,0 +1,1 @@
+This empty file exists only to trigger a fresh push event so the `windows` GitHub Actions workflow runs and builds an MSI from the patched `user_session.cc` (commit 5d8cf8a). Safe to delete after the build artifact has been downloaded.
