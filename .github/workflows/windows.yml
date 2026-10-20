@@ -26,15 +26,15 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [win11]
+        os: [windows-2022]
         arch: [x86, x64]
         build_type: [release, debug]
         include:
-          - os: win11
+          - os: windows-2022
             arch: x86
             triplet: x86-windows-static
             msvc_arch: amd64_x86
-          - os: win11
+          - os: windows-2022
             arch: x64
             triplet: x64-windows-static
             msvc_arch: amd64
